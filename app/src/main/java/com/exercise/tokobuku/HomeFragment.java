@@ -71,17 +71,16 @@ public class HomeFragment extends Fragment {
                         String deskripsi = object.getString("deskripsi");
 
                         data.add(new Buku(id, judul_buku, pengarang, penerbit, deskripsi));
-
-                        //Menambahkan data kedalam RecyclerView
-                        LinearLayoutManager layoutManager= new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-                        listBuku.setHasFixedSize(true);
-
-                        listBuku.setLayoutManager(layoutManager);
-
-                        ListBukuAdapter adapter = new ListBukuAdapter(getActivity().getApplicationContext(), data);
-
-                        listBuku.setAdapter(adapter);
                     }
+                    //Menambahkan data kedalam RecyclerView
+                    LinearLayoutManager layoutManager= new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+                    listBuku.setHasFixedSize(true);
+
+                    listBuku.setLayoutManager(layoutManager);
+
+                    ListBukuAdapter adapter = new ListBukuAdapter(getActivity().getApplicationContext(), data);
+
+                    listBuku.setAdapter(adapter);
 
 
                 } catch (JSONException e) {
